@@ -11,8 +11,8 @@ export default {
     ],
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            colors: {
+                "laracasts": "rgb(50,138,241)"
             },
         },
     },

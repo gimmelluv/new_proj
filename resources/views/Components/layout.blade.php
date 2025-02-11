@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/js/app.js'])
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 </head>
 <body>
 <div class="h-full">
@@ -52,6 +53,15 @@
                 <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
                 <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
               @endguest
+
+              @auth
+                <form method="POST" action="/logout">
+                  @csrf
+                  
+                  <x-form-button>Log Out</x-form-button>
+                </form>
+              @endauth
+                
             </div>
       
         <!-- Mobile menu, show/hide based on menu state. -->
